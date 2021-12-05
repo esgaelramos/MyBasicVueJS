@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundamentos Vue</title>
+</head>
+<body>
+    <h1>Fundamentos VueJS</h1>
+
+    <div id="instanciaUno">
+        <p>
+            {{ mensaje }}. El primero es: <b>{{ numero1 }}</b> y el otro: <b>{{ numero2 }}</b><br>
+            Por lo que la suma es: <b>{{ numero1 + numero2 }}</b>
+        </p>
+    </div>
+
+    <div id="instanciaDos">
+        <p>
+            {{ mensaje }} <br>
+            {{ mensaje2 }}
+        </p>
+    </div>
+
+    <h2 class="titile" v-show="condicion">
+        Directivas VueJS
+    </h2>
+
+    <div id="miApp">
+        <h2>{{ titulo }}</h2>
+        <p v-show="aparecer">Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident, amet eveniet ducimus nostrum illum dolores sequi. Saepe tempore deleniti nemo, maxime eum architecto alias, non veritatis quisquam atque autem doloribus?</p>
+        <a href="#" v-bind:title="tituloenlace">Presiona aquí</a>
+        <br>
+        <p :title="titulo">Señala aquí</p>
+
+        <p>¿La suma de num1 + num2 es 10?</p>
+        <p>¿La suma de {{ num1 }} + {{ num2 }} es 10?</p>
+        <h3 v-if="num1 + num2 === 10">Sí</h3>
+        <h3 v-else>No</h3>
+    
+        <h4 v-show="num1 + num2 === 10">Sí con V-SHOW</h4>
+
+        <ul>
+            <li>Manzana</li>
+            <li>Uva</li>
+            <li>Naranja</li>
+            <li>Melón</li>
+        </ul>
+
+        <p>{{ frutas }}</p>
+
+        <ul>
+            <li v-for="fruta in frutas">Ejemplo de  lógica</li>
+        </ul>
+
+        <ul>
+            <li v-for="fruta in frutas">{{ fruta }}</li>
+        </ul>
+
+        <div v-for="i in 10" style="width: 100px; height: 100px; background: green;"></div>
+
+        <ul>
+            <li v-for="ingrediente in ingredientes">{{ ingrediente }}</li>
+        </ul>
+
+        <ul>
+            <li v-for="ingrediente in ingredientes" :key="ingrediente.id">{{ ingrediente.name }}</li>
+        </ul>
+
+        <ul>
+            <li v-for="(ingrediente, index) in ingredientes" :key="ingrediente.id">{{ index }} - {{ ingrediente.name }}</li>
+        </ul>
+
+        <ul>
+            <li v-for="(ingrediente, index) in ingredientes" :key="ingrediente.id">{{ 1 + index }} - {{ ingrediente.name }}</li>
+        </ul>
+
+        <h2>Eventos y funciones</h2>
+        <button v-on:click="aparecer=!aparecer">Clic Aquí</button>
+        <p v-show="aparecer">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusantium numquam reiciendis quasi odio nam cumque similique voluptatem molestiae error quis temporibus quam iusto facilis doloribus sunt, nisi, molestias expedita unde?</p>
+        <br>
+        <button @click="saludar()">Saludar</button>
+        <br>
+        <button @click="probrandoParametros(5, 7)">Suma Ahora</button>
+        
+        <h1> {{ contador }}</h1>
+        <button @click="incrementarContador()">Incrementar Ahora</button>    
+    
+        <p>
+            <input type="text" placeholder="Ingrese un número" v-model="numero1"> 
+            <br><br>
+            <input type="text" placeholder="Ingrese un número" v-model="numero2">
+        </p>
+        <button @click="">Sumar</button>
+        <h3>Resultado de suma: {{ numero1 + numero2 }}</h3>    
+        <h3>Resultado de suma: {{ parseInt(numero1) + parseInt(numero2) }}</h3>    
+        <h3>Resultado de suma: {{ sumarNumeros() }}</h3>    
+
+
+    </div>
+
+
+
+
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
+    -->
+    <script src="vue.js"></script>
+    <script src="instancias.js"></script>
+    <script src="myApp.js"></script>
+</body>
+</html>
