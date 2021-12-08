@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Propiedades Vue</title>
+</head>
+<body style="padding-bottom: 400px;">
+
+    <div id="propiedadesApp">
+        <h1>Propiedades en Vue</h1>
+
+        <h2>Propiedades Computadas</h2>
+
+        <input type="number" placeholder="Precio Dolar" v-model="dolar">
+
+        <h4>El monto total a pagar es: {{ sumarVentas() }}</h4>
+
+        <h4>El monto total a pagar computado es: {{ montoPagar }}</h4>
+        <h4>El monto total a pagar computado es: {{ montoPagar }}</h4>
+        <h4>El monto total a pagar computado es: {{ montoPagar }}</h4>
+
+        <hr>
+        <h2>Propidades Observadas / Vigilantes</h2>
+        
+        <p>
+            <input type="text" placeholder="Buscar producto" v-model="kwarg">
+        </p>
+
+        <ul>
+            <li v-for="producto in buscarProducto()">{{ producto }}</li>
+        </ul>
+
+        <h2>Diferencia entre Propiedad Computada y Propiedad Observada</h2>
+        <p>
+            <input type="text" placeholder="nombres..." v-model="full_name">
+        </p>
+        <p>
+            <input type="text" placeholder="dirección..." v-model="direccion">
+        </p>
+
+        <p>
+            <textarea cols="30" rows="10" v-model="comprobante"></textarea>
+        </p>
+
+        <p>
+            2<sup>2</sup> <br>
+            2<sub>2</sub> <br>
+            <sup>2</sup>&#8730;raizcuadrada <br>
+            &#928; * 4
+        </p>
+    </div>
+
+
+    <script src="propiedades.js"></script>
+    <script src="vue.js"></script>
+</body>
+</html>
