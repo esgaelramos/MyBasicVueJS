@@ -1,0 +1,12 @@
+body{
+    margin-bottom: 200px;
+}
+
+#appReceta{
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+}
+
+.descripcion-receta{
+    background-color: aqua;
+}
