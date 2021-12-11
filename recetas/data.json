@@ -1,0 +1,106 @@
+lista_recetas = [
+  {
+    "id": "001",
+    "nombre": "Receta de Tarta de manzana sin azúcar",
+    "descripcion": "Descorazona dos de las manzanas y pélalas. Trocea en cubos grandes y ponlos en una olla al fuego con la ramita de canela. Una vez hierva, baja un poco el fuego, tapa la olla y deja cocer entre 20-30 min o hasta que las manzanas estén tiernas.",
+    "chef": "Isabel Rescalvo",
+    "ingredientes": [
+      { 
+        "id": "i001",
+        "nombre": " 3 manzanas grandes",
+      },
+      { 
+        "id": "i002",
+        "nombre": " 1 rama de canela",
+      },
+      { 
+        "id": "i003",
+        "nombre": "1 plátano maduro",
+      },
+    ]
+  },
+  {
+    "id": "002",
+    "nombre": "Carlota de mango",
+    "descripcion": "Corta la punta de los bizcochos de soletilla sin excederte y guárdala. Recuerda que también puedes hacer la receta de carlota de mango con galletas Marías.",
+    "chef": "Isabel Rescalvo",
+    "ingredientes": [
+      { 
+        "id": "i004",
+        "nombre": "175 gramos de azúcar",
+      },
+      { 
+        "id": "i005",
+        "nombre": " 2 claras de huevo a temperatura ambiente",
+      },
+      { 
+        "id": "i006",
+        "nombre": "400 gramos de nata para montar o crema de leche",
+      },
+      { 
+        "id": "i007",
+        "nombre": "100 gramos de mango troceado",
+      },
+    ]
+  },
+  {
+    "id": "003",
+    "nombre": "Pie de parchita",
+    "descripcion": "Tritura las galletas hasta hacerlas polvo en la licuadora o procesadora.",
+    "chef": " Dani León.",
+    "ingredientes": [
+      { 
+        "id": "i008",
+        "nombre": " 3 yemas de huevo",
+      },
+      { 
+        "id": "i009",
+        "nombre": " 1 lata de leche condensada (397 grs)",
+      },
+    ]
+  },
+  {
+    "id": "004",
+    "nombre": "Dulce de leche reposteroa",
+    "descripcion": "Tritura las galletas hasta hacerlas polvo en la licuadora o procesadora.",
+    "chef": "Carolina. ",
+    "ingredientes": [
+      { 
+        "id": "i010",
+        "nombre": " 1 litro de leche entera",
+      },
+      { 
+        "id": "i011",
+        "nombre": "  300 gramos de azucar (1½ tazas)",
+      },
+      { 
+        "id": "i012",
+        "nombre": " 1 cucharadita de esencia de vainilla",
+      },
+    ]
+  },
+  {
+    "id": "005",
+    "nombre": "Mermelada de nísperos",
+    "descripcion": "Limpia los nísperos, quítales el hueso y la piel..",
+    "chef": " Montse Morote Ortega",
+    "ingredientes": [
+      { 
+        "id": "i013",
+        "nombre": "  1 kilogramo de nísperos sin piel y sin hueso",
+      },
+      { 
+        "id": "i014",
+        "nombre": " 200 gramos de azúcar (1 taza)",
+      },
+      { 
+        "id": "i015",
+        "nombre": "1 trozo de limón",
+      },
+      { 
+        "id": "i016",
+        "nombre": "2 cucharadas soperas de agua",
+      },
+    ]
+  },
+]
