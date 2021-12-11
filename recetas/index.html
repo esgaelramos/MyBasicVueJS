@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recetario</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Recetario</h1>
+    <div id="appReceta">
+        
+        
+
+        <div class="lista">
+            <h3>Seleccione una receta</h3>
+
+            <p>
+                <input 
+                type="text"
+                placeholder="Buscar..."
+                v-model="search">
+            </p>
+            <ul>
+                <li v-for="receta in lista_recetas_filtrada"
+                :key="receta.id">
+                    <a @Click="SeleccionarReceta(receta)"
+                    href="#">
+                        {{ receta.nombre }}
+                    </a>    
+                </li>
+            </ul>
+
+            <button @click="show_add_receta = !show_add_receta">Crear nueva receta</button>
+
+            <div v-show="show_add_receta">
+                <p>
+                    <input 
+                    type="text"
+                    placeholder="ID..."
+                    v-model="new_receta.id">
+                </p>
+                <p>
+                    <input 
+                    type="text"
+                    placeholder="Nombre..."
+                    v-model="new_receta.nombre">
+                </p>
+                <p>
+                    <textarea cols="30" 
+                    rows="10" 
+                    placeholder="Descripción..." 
+                    v-model="new_receta.descripcion"></textarea>
+                </p>
+                <p>
+                    <input 
+                    type="text"
+                    placeholder="Chef..."
+                    v-model="new_receta.chef">
+                </p>
+                <p>
+                    <input 
+                    type="text"
+                    placeholder="Agregar ingrediente..."
+                    v-model="nuevo_ingrediente"
+                    @keyup.enter="AgregarIngrediente()"
+                    >
+                </p>
+                <ul>
+                    <li 
+                    v-for="ingrediente in new_receta.ingredientes"
+                    :key="ingrediente.id">
+                    {{ ingrediente.nombre }}</li>
+                </ul>
+                <p>
+                    <button @Click="AgregarReceta()">Agregar</button>
+                </p>
+            </div>
+        </div>
+        
+        
+        <div class="detalle"
+        v-if="receta_seleccionada">
+            <h3>{{ receta_seleccionada.nombre }}</h3>
+            <h4>Hecha por {{ receta_seleccionada.chef }}</h4>
+            <h4>Ingredientes</h4>
+            <ul>
+                <li v-for="ingrediente in receta_seleccionada.ingredientes">{{ ingrediente.nombre }}</li>
+            </ul>
+
+
+            <p class="descripcion-receta">
+                {{ receta_seleccionada.descripcion }}
+            </p>
+            <p>
+                <button 
+                @Click="EliminarReceta(); show_deshacer = !show_deshacer">Eliminar</button>
+                <div v-show="show_deshacer">
+                    <button @Click="DeshacerBorrado(); show_deshacer = !show_deshacer">Deshacer</button>
+                </div>
+            </p>
+        </div>
+    </div>
+
+
+
+    <script src="vue.js"></script>
+    <script src="recetas.js"></script>
+</body>
+</html>
